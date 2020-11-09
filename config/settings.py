@@ -11,16 +11,21 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 from pathlib import Path
+import json
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
+with open(BASE_DIR.joinpath('secrets.json')) as file:
+    SECRETS = json.load(file)
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'q4z1dp5hs=1q*6azi)17s45@visi)#@a$akc-0yu!20yd9^tfn'
+SECRET_KEY = SECRETS.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -81,8 +86,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'postgres',
-        'USER': 'postgres',
-        'PASSWORD': 'postgres',
+        'USER': SECRETS.get('DB_USER'),
+        'PASSWORD': SECRETS.get('DB_PASS'),
         'HOST': 'db',
         'PORT': 5432
     }
