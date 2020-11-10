@@ -5,7 +5,7 @@
     "editor.formatOnSave": false,
     "editor.formatOnPaste": true
   },
-  "python.pythonPath": "/home/conch/.local/share/virtualenvs/books--pFvVOe_/bin/python",
+  "python.pythonPath": "/home/matt/.local/share/virtualenvs/django-bookstore-H0Km_2rn",
   "python.formatting.provider": "autopep8",
   "editor.formatOnSave": true
 }
