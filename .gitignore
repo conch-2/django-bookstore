@@ -141,3 +141,6 @@ cython_debug/
 # Secrets
 secrets.json
 docker-compose.yml
+
+# VSCode
+.vscode/
