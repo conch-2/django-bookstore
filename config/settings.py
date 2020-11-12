@@ -54,7 +54,8 @@ INSTALLED_APPS = [
 
     # Local
     'accounts',
-    'pages'
+    'pages',
+    'books'
 ]
 
 MIDDLEWARE = [
